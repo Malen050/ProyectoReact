@@ -1,0 +1,48 @@
+.App {
+  text-align: center;
+}
+
+/* .App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white; 
+}*/
+
+/* ESTILO DEL NAVBAR*/
+/* 
+.navBar-menu{
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+
+} */
+
+header{
+  display: flex;
+  justify-content: space-around;
+  background-color: skyblue;
+  padding: 15px;
+}
+
+ .navBar-menu{
+  display: flex;
+  flex-direction: row;
+  
+} 
+
+.navBar-menu li{
+  padding: 1rem;
+  list-style: none;
+  font-size: larger;
+
+}
+
+
+/* ESTILO DEL CARRITO */
+
+
