@@ -1,0 +1,34 @@
+.container-detail{
+    margin-top: 6rem;
+}
+
+.detail{
+    border: 1px solid black;
+    border-radius: 5%;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(2, 2, 2, 0.4);
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(223, 179, 129);
+}
+
+.detail-img{
+    width: 100%;
+    height: 260px;
+    border-radius: 5%;
+    margin-bottom: 10px;
+}
+
+.title-detail{
+    font-size: 2rem;
+}
+
+.price-detail{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.stock-detail{
+    font-weight: bold;
+}

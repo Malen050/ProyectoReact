@@ -1,8 +1,6 @@
-import React, {useEffect, useState} from 'react';
-import ItemList from '../ItemList/ItemList';
-import {useParams} from 'react-router-dom';
-
-
+import React, {useState, useEffect} from "react";
+import ItemDetail from "../ItemDetail/ItemDetail";
+import { useParams } from "react-router-dom";
 
 
 const productos = [
@@ -16,41 +14,26 @@ const productos = [
 
 
 
+const ItemDetailContainer = () => {
 
-const ItemListContainer = () => {
+    const [data, setData] = useState({})
 
-    const [data, setData] = useState([]);
+    const {itemId} = useParams()
 
-    
-    const { categoriaId } = useParams();
-  
     useEffect(() => {
-      const getData = new Promise((resolve) => {
-        setTimeout(() => {
-          resolve(productos);
-        }, 2000);
-      });
-  
-      if (categoriaId) {
-        getData.then((res) => {
-          const filterData = res.filter((item) => item.categoria.toLowerCase() === categoriaId.toLowerCase());
-          setData(filterData);
+        const getData = new Promise(resolve => {
+            setTimeout(() => {
+                resolve(productos)
+            }, 2000);
         });
-      } else {
-        getData.then((res) => setData(res));
-      }
-    }, [categoriaId]);
-  
-        return (
-        
-            <ItemList data={data} />
-    
-        )
-  };
-  
-  
-  
 
+        getData.then(res => setData(res.find(Item => Item.id === parseInt(itemId))))
+       
+    })
 
-export default ItemListContainer;
+    return (
+        <ItemDetail data={data} />
+    )
+}
 
+export default ItemDetailContainer;

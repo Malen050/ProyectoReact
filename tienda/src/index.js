@@ -4,10 +4,45 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import{
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+import NavBar from './components/navBar/navBar';
+import CartWidget from './components/CartWidget/cartWidget';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+
+
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <NavBar/>
+  },
+  {
+    path: "/cart",
+    element: <CartWidget />
+  },
+  {
+    path: "/categoria/:categoriaId",
+    element: <ItemListContainer />
+  },
+  {
+    path: "/item/:itemId",
+    element: <ItemDetailContainer />
+  },
+])
+
+
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
